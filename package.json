@@ -27,7 +27,16 @@
     "README.md"
   ],
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.0",
+    "awesome-phonenumber": "^2.39.0",
+    "axios": "^0.21.0",
+    "csv-file-validator": "^1.8.0",
+    "date-fns": "^2.14.0",
+    "i18n-iso-countries": "^5.1.0",
+    "lodash": "^4.17.20",
+    "qs": "^6.9.1",
     "vue": "^2.6.12",
+    "vuedraggable": "^2.24.1",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
@@ -39,6 +48,7 @@
     "@storybook/addons": "^6.1.11",
     "@storybook/vue": "^6.1.11",
     "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.161",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "^4.5.9",

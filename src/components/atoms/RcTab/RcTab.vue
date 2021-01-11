@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="{ optionsList__tab: true, active }"
+    :class="{ 'optionsList__tab': true, active }"
     @click="$emit('click')"
   >
     <div class="rc-body14 fw-bold">

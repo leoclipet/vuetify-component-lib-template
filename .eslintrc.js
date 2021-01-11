@@ -5,9 +5,9 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/recommended',
-    '@vue/airbnb',
-    'eslint:recommended',
+    // 'plugin:vue/recommended',
+    // '@vue/airbnb',
+    // 'eslint:recommended',
   ],
 
   rules: {
@@ -55,8 +55,10 @@ module.exports = {
       ],
       plugins: ['@typescript-eslint/eslint-plugin'],
       rules: {
+
         '@typescript-eslint/indent': 'off', // So there is no conflict between indents of others
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/interface-name-prefix': 'off',
       },
     },
   ],
