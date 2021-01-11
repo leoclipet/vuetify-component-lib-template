@@ -1,41 +1,63 @@
 module.exports = {
   root: true,
+
   env: {
     node: true,
-    jest: true,
   },
-  plugins: ["prettier"],
   extends: [
-    "plugin:vue/recommended",
-    "airbnb-base",
-    "plugin:prettier/recommended",
-    "eslint:recommended",
+    'plugin:vue/recommended',
+    '@vue/airbnb',
+    'eslint:recommended',
   ],
+
   rules: {
-    "import/no-extraneous-dependencies": "off",
-    "no-console": "off",
-    "no-undef": "warn",
-    "no-unused-vars": "warn",
-    "no-underscore-dangle": "warn",
-    "prettier/prettier": "warn",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "vue/singleline-html-element-content-newline": "off",
-    "vue/require-default-prop": "off",
-    "vue/html-closing-bracket-spacing": "off",
-    "vue/no-mutating-props": "warn",
-    "vue/max-attributes-per-line": [
-      "error",
-      {
-        singleline: 5,
-        multiline: {
-          max: 5,
-          allowFirstLine: true,
-        },
-      },
-    ],
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'linebreak-style': 'off',
+    'no-unused-expressions': 'off',
+    'max-len': [2, {
+      code: 150, tabWidth: 4, ignoreUrls: true, ignoreComments: true,
+    }],
   },
+
   parserOptions: {
-    parser: "babel-eslint",
-    sourceType: "module",
+    parser: '@typescript-eslint/parser',
+    extraFileExtensions: ['.vue'],
   },
+
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+      ],
+      env: {
+        jest: true,
+      },
+      rules: {
+        'max-lines-per-function': 0,
+        'max-nested-callbacks': 0,
+        'max-lines': 0,
+      },
+    },
+    {
+      files: ['**/__mocks__/*.ts', '**/__mocks__/*.js'],
+      rules: {
+        'max-lines-per-function': 0,
+        'max-nested-callbacks': 0,
+        'max-lines': 0,
+      },
+    },
+    {
+      files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
+      extends: [
+        '@vue/typescript/recommended',
+      ],
+      plugins: ['@typescript-eslint/eslint-plugin'],
+      rules: {
+        '@typescript-eslint/indent': 'off', // So there is no conflict between indents of others
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
+    },
+  ],
 };

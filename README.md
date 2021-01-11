@@ -70,7 +70,7 @@ Importing the single file .vue components directly. (If using Vue CLI 3 with Bab
 Importing the source `.vue` file:
 
 ```js
-// main.js
+// main.ts
 import HelloWorld from "component-library/src/components";
 Vue.use(HelloWorld);
 ```
@@ -78,7 +78,7 @@ Vue.use(HelloWorld);
 Importing the bundled `.js`:
 
 ```js
-// main.js
+// main.ts
 import HelloWorld from "component-library";
 Vue.use(HelloWorld);
 ```
