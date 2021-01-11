@@ -1,14 +1,14 @@
-import Footer from "../src/components/Footer.vue";
+import RcTab from '../src/components/atoms/RcTab/RcTab.vue';
 
 export default {
-  title: "Footer",
+  title: 'RcTab',
   parameters: {
     componentSubtitle:
-      "Footers with Organisation branding for bottom page rendering.",
+      'RcTab',
   },
 };
 
 export const Default = () => ({
-  components: { Footer },
-  template: "<Footer/>",
+  components: { RcTab },
+  template: '<RcTab :label="\'coucou\'"/>',
 });
